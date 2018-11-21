@@ -12,13 +12,24 @@ let io  = socketIO(server) // adicionando socket.io ao servidor
 
 app.use(express.static(publicPath)) // Middleware acesso a pasta publica
 
-//Escopo de connection
+//Escopo de connection Socket.IO
 io.on('connection', (socket) => {
 	console.log('Servidor Conectado')
 
 	socket.on('disconnect', () =>{
 		console.log('Usuario desconectado')
 	})
+
+	socket.emit('newEmail',{
+		from : "d.sis06@gmail.com",
+		body: "Deu certo KKKKK"
+	})
+
+	socket.on('createEmail', (dados)=>{
+		console.log(dados)
+	})
+
+
 })
 // quando usuario desconectar
 

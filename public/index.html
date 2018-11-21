@@ -10,16 +10,6 @@
 	<h1>Chat Socket.IO</h1>
 
 	<script src="/socket.io/socket.io.js"></script>
-	<script>
-		var socket = io()
-		//Ouvindo quando servidor estiver conectado
-		socket.on('connect', () => {
-			console.log('Servidor connectado')
-		})
-		//Ouvindo quando servidor for desconectado
-		socket.on('disconnect', () => {
-			console.log('Servidor disconectado')
-		})
-	</script>
+	<script src="/js/index.js"></script>
 </body>
 </html>
